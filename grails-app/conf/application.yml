@@ -1,0 +1,75 @@
+info:
+  app:
+    name: demo
+    version: '0.1'
+    grailsVersion: 6.0.0
+grails:
+  mime:
+    disable:
+      accept:
+        header:
+          userAgents:
+          - Gecko
+          - WebKit
+          - Presto
+          - Trident
+    types:
+      json:
+      - application/json
+      - text/json
+      hal:
+      - application/hal+json
+      - application/hal+xml
+      xml:
+      - text/xml
+      - application/xml
+      atom: application/atom+xml
+      css: text/css
+      csv: text/csv
+      js: text/javascript
+      rss: application/rss+xml
+      text: text/plain
+      all: '*/*'
+      form: application/x-www-form-urlencoded
+      html:
+      - text/html
+      - application/xhtml+xml
+      multipartForm: multipart/form-data
+      pdf: application/pdf
+  views:
+    gsp:
+      encoding: UTF-8
+      htmlcodec: xml
+      codecs:
+        expression: html
+        scriptlet: html
+        taglib: none
+        staticparts: none
+    default:
+      codec: html
+  gorm:
+    reactor:
+      events: false
+environments:
+  production:
+    grails:
+      plugin:
+        console:
+          enabled: false
+          fileStore:
+            remote:
+              enabled: false
+dataSource:
+  url: jdbc:postgresql://localhost:5432/postgres
+  driverClassName: org.postgresql.Driver
+  username: postgres
+  password: ''
+  pooled: true
+  jmxExport: true
+hibernate:
+  hbm2ddl:
+    auto: update
+  cache:
+    queries: false
+    use_second_level_cache: false
+    use_query_cache: false
